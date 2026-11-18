@@ -1,0 +1,1073 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>For Princess Favour ❤️</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=IBM+Plex+Mono:wght@400;600&family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg-princess: #fff0f5;
+      --bg-surface: #ffffff;
+      --text-primary: #4a2c3d;
+      --text-muted: #8c677c;
+      --accent-pink: #ff65a3;
+      --accent-rose: #ff85b3;
+      --accent-gold: #f6d887;
+      --serious-bg: #110d16;
+      --serious-card: #1c1524;
+      --serious-accent: #f472b6;
+      --parchment: #fffaf4;
+      --ink: #3b1f15;
+      --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      min-height: 100dvh;
+      background: radial-gradient(circle at 50% 10%, #ffe4ec 0%, #ffd1df 40%, #fbcfe8 100%);
+      color: var(--text-primary);
+      font-family: 'Montserrat', -apple-system, sans-serif;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      overflow-x: hidden;
+      transition: background 0.7s var(--ease-out-expo);
+    }
+
+    body.serious-mode {
+      background: radial-gradient(circle at 50% 0%, #291832 0%, var(--serious-bg) 70%);
+      color: #fce7f3;
+    }
+
+    body.comfort-mode {
+      background: radial-gradient(circle at 50% 15%, #fff5eb 0%, #ffe3ec 48%, #fbcfe8 100%);
+    }
+
+    .stage {
+      width: 100%;
+      max-width: 560px;
+      display: none;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      animation: stageEnter 0.55s var(--ease-out-expo) forwards;
+    }
+
+    .stage.active {
+      display: flex;
+    }
+
+    @keyframes stageEnter {
+      from {
+        opacity: 0;
+        transform: translateY(18px) scale(0.98);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+      }
+    }
+
+    .card {
+      width: 100%;
+      background: rgba(255, 255, 255, 0.9);
+      backdrop-filter: blur(16px);
+      border-radius: 32px;
+      padding: 36px 26px;
+      box-shadow:
+        0 20px 45px -10px rgba(255, 105, 180, 0.28),
+        inset 0 1px 0 0 rgba(255, 255, 255, 0.85);
+      border: 2px solid rgba(255, 182, 193, 0.45);
+      transition: background 0.6s var(--ease-out-expo), box-shadow 0.6s var(--ease-out-expo), border-color 0.6s;
+    }
+
+    .serious-mode .card {
+      background: rgba(28, 21, 36, 0.94);
+      border: 1px solid rgba(244, 114, 182, 0.28);
+      border-radius: 20px;
+      box-shadow:
+        inset 0 1px 0 0 rgba(244, 114, 182, 0.22),
+        0 24px 60px -12px rgba(0, 0, 0, 0.8);
+    }
+
+    .comfort-mode .card {
+      background: linear-gradient(180deg, rgba(255, 252, 248, 0.95) 0%, rgba(255, 242, 248, 0.92) 100%);
+      border: 2px solid rgba(251, 207, 232, 0.85);
+      box-shadow:
+        0 24px 55px -10px rgba(244, 114, 182, 0.32),
+        0 0 40px rgba(253, 230, 138, 0.3),
+        inset 0 1px 0 0 #ffffff;
+    }
+
+    .fridge-scene {
+      width: 100%;
+      background: #fdf2f8;
+      border: 2px dashed rgba(255, 182, 193, 0.85);
+      border-radius: 24px;
+      padding: 22px 14px;
+      margin-bottom: 24px;
+      position: relative;
+      box-shadow: inset 0 2px 8px rgba(255, 192, 203, 0.3);
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .polaroid-note {
+      background: #ffffff;
+      padding: 10px 10px 24px 10px;
+      border-radius: 10px;
+      box-shadow: 0 10px 25px rgba(130, 70, 95, 0.16);
+      width: 150px;
+      position: relative;
+      transition: transform 0.3s var(--ease-out-expo);
+    }
+
+    .polaroid-note:nth-child(1) {
+      transform: rotate(-5deg);
+    }
+    .polaroid-note:nth-child(2) {
+      transform: rotate(6deg) translateY(6px);
+    }
+
+    .polaroid-note:hover {
+      transform: scale(1.05) rotate(0deg);
+      z-index: 10;
+    }
+
+    .polaroid-note::before {
+      content: "";
+      position: absolute;
+      top: -6px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 14px;
+      height: 14px;
+      background: radial-gradient(circle at 35% 35%, #fff 0%, #ff4d79 60%, #c51d4a 100%);
+      border-radius: 50%;
+      box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
+      z-index: 5;
+    }
+
+    .polaroid-note img {
+      width: 100%;
+      height: 130px;
+      object-fit: cover;
+      border-radius: 6px;
+      display: block;
+    }
+
+    .polaroid-caption {
+      font-family: 'Alex Brush', cursive;
+      font-size: 1.25rem;
+      color: #9d4edd;
+      margin-top: 8px;
+      line-height: 1;
+    }
+
+    .stage-photo-wrap {
+      width: 100%;
+      max-height: 290px;
+      border-radius: 22px;
+      overflow: hidden;
+      margin-bottom: 22px;
+      box-shadow: 0 14px 34px rgba(244, 114, 182, 0.28);
+      border: 2px solid rgba(251, 207, 232, 0.9);
+      background: #fff8fb;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .stage-photo-wrap img,
+    .stage-photo-wrap svg {
+      width: 100%;
+      height: auto;
+      max-height: 290px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .badge {
+      display: inline-block;
+      font-size: 0.78rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 6px 16px;
+      border-radius: 999px;
+      background: rgba(255, 101, 163, 0.15);
+      color: #d946ef;
+      margin-bottom: 16px;
+      border: 1px solid rgba(244, 114, 182, 0.3);
+    }
+
+    .serious-badge {
+      font-family: 'IBM Plex Mono', monospace;
+      background: rgba(244, 114, 182, 0.15);
+      color: #f472b6;
+      border: 1px solid rgba(244, 114, 182, 0.4);
+      border-radius: 6px;
+    }
+
+    h1.playful-title {
+      font-size: clamp(2.4rem, 6vw, 3.2rem);
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      line-height: 1.1;
+      margin-bottom: 10px;
+      background: linear-gradient(135deg, #be185d 0%, #ec4899 50%, #f43f5e 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    p.playful-sub {
+      font-size: clamp(1.25rem, 4vw, 1.6rem);
+      font-weight: 700;
+      color: #9d174d;
+      margin-bottom: 28px;
+    }
+
+    .serious-title {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: clamp(1.35rem, 4vw, 1.75rem);
+      font-weight: 600;
+      color: #fbcfe8;
+      margin-bottom: 12px;
+      letter-spacing: -0.02em;
+    }
+
+    .serious-sub {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.92rem;
+      color: #cbd5e1;
+      line-height: 1.6;
+      margin-bottom: 28px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      width: 100%;
+      padding: 16px 24px;
+      border-radius: 20px;
+      border: none;
+      font-family: inherit;
+      font-size: 1.05rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: transform 0.22s var(--ease-out-expo), box-shadow 0.22s var(--ease-out-expo), background 0.22s;
+    }
+
+    .btn:active {
+      transform: scale(0.98);
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, #ec4899 0%, #db2777 100%);
+      color: #fff;
+      box-shadow: 0 10px 25px -5px rgba(236, 72, 153, 0.5);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 14px 30px -5px rgba(236, 72, 153, 0.7);
+    }
+
+    .btn-serious {
+      font-family: 'IBM Plex Mono', monospace;
+      background: #db2777;
+      color: #fff;
+      border-radius: 12px;
+      box-shadow: 0 8px 20px -4px rgba(219, 39, 119, 0.5);
+    }
+
+    .btn-serious:hover {
+      background: #be185d;
+      transform: translateY(-2px);
+    }
+
+    .choice-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+      margin-top: 8px;
+    }
+
+    .choice-card {
+      background: rgba(255, 255, 255, 0.06);
+      border: 1.5px solid rgba(244, 114, 182, 0.35);
+      border-radius: 22px;
+      padding: 24px 16px;
+      color: #fce7f3;
+      cursor: pointer;
+      transition: transform 0.25s var(--ease-out-expo), border-color 0.25s, background 0.25s;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .choice-card:hover {
+      transform: translateY(-4px);
+      background: rgba(244, 114, 182, 0.16);
+      border-color: #f472b6;
+    }
+
+    .choice-card:active {
+      transform: scale(0.97);
+    }
+
+    .choice-emoji {
+      font-size: 2.5rem;
+    }
+
+    .choice-label {
+      font-size: 1.15rem;
+      font-weight: 700;
+    }
+
+    .comfort-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 14px;
+      border-radius: 999px;
+      background: linear-gradient(135deg, #ffe4e6 0%, #fef3c7 100%);
+      color: #9d174d;
+      font-size: 0.78rem;
+      font-weight: 700;
+      margin-bottom: 10px;
+      border: 1px solid rgba(251, 191, 36, 0.35);
+    }
+
+    .random-case-banner {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: clamp(2rem, 5.5vw, 2.65rem);
+      font-weight: 700;
+      color: #be185d;
+      letter-spacing: 0.04em;
+      margin: 4px 0 12px;
+      text-shadow: 0 4px 20px rgba(236, 72, 153, 0.22);
+    }
+
+    .comfort-box {
+      background: linear-gradient(135deg, rgba(255, 241, 242, 0.9) 0%, rgba(255, 251, 235, 0.9) 100%);
+      border: 1.5px solid rgba(244, 114, 182, 0.28);
+      border-radius: 20px;
+      padding: 18px 20px;
+      margin: 6px 0 18px;
+      box-shadow: 0 8px 22px rgba(244, 114, 182, 0.1);
+    }
+
+    .chef-caption {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: 1.25rem;
+      font-style: italic;
+      font-weight: 600;
+      color: #831843;
+      line-height: 1.45;
+      margin-bottom: 6px;
+    }
+
+    .comfort-subtext {
+      font-size: 0.88rem;
+      color: #9d5c78;
+      line-height: 1.55;
+      font-weight: 500;
+    }
+
+    .timer-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 9px 18px;
+      border-radius: 999px;
+      background: rgba(255, 228, 230, 0.85);
+      border: 1px solid rgba(244, 114, 182, 0.3);
+      font-size: 0.85rem;
+      color: #be185d;
+      margin-top: 4px;
+      font-weight: 600;
+      animation: softPulse 2s ease-in-out infinite;
+    }
+
+    @keyframes softPulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.03); }
+    }
+
+    .birthday-reveal {
+      display: none;
+      margin-top: 28px;
+      padding-top: 26px;
+      border-top: 2px dashed rgba(244, 114, 182, 0.35);
+      animation: grandReveal 0.85s var(--ease-out-expo) forwards;
+    }
+
+    .birthday-reveal.visible {
+      display: block;
+    }
+
+    @keyframes grandReveal {
+      from {
+        opacity: 0;
+        transform: translateY(24px) scale(0.96);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+      }
+    }
+
+    .birthday-headline {
+      font-size: clamp(1.85rem, 5.5vw, 2.5rem);
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      line-height: 1.2;
+      margin-bottom: 18px;
+      background: linear-gradient(135deg, #d946ef 0%, #ec4899 50%, #f43f5e 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .storybook-wrapper {
+      position: relative;
+      background: linear-gradient(145deg, #fff5f9 0%, #ffe8f2 100%);
+      border-radius: 24px;
+      padding: 18px 16px 20px;
+      border: 2px solid #f9a8d4;
+      box-shadow:
+        0 18px 40px rgba(219, 39, 119, 0.18),
+        inset 0 0 0 4px rgba(255, 255, 255, 0.75);
+      perspective: 1200px;
+    }
+
+    .storybook-wrapper::before {
+      content: "";
+      position: absolute;
+      left: 8px;
+      top: 18px;
+      bottom: 18px;
+      width: 6px;
+      background: repeating-linear-gradient(
+        to bottom,
+        #f472b6 0px,
+        #f472b6 10px,
+        transparent 10px,
+        transparent 22px
+      );
+      border-radius: 4px;
+      opacity: 0.65;
+    }
+
+    .book-page-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 8px 10px 16px;
+      font-size: 0.78rem;
+      font-weight: 800;
+      letter-spacing: 0.06em;
+      color: #be185d;
+      text-transform: uppercase;
+    }
+
+    .book-page {
+      display: none;
+      background: #fffdf9;
+      border-radius: 18px;
+      padding: 22px 18px;
+      margin-left: 8px;
+      position: relative;
+      border: 1px solid rgba(244, 114, 182, 0.35);
+      box-shadow: 4px 8px 20px rgba(157, 23, 77, 0.08);
+      animation: pageFlipIn 0.48s var(--ease-out-expo) forwards;
+    }
+
+    .book-page.active-page {
+      display: block;
+    }
+
+    @keyframes pageFlipIn {
+      from {
+        opacity: 0;
+        transform: rotateY(-14deg) translateX(12px) scale(0.98);
+      }
+      to {
+        opacity: 1;
+        transform: rotateY(0deg) translateX(0) scale(1);
+      }
+    }
+
+    .washi-tape {
+      position: absolute;
+      top: -10px;
+      left: 50%;
+      transform: translateX(-50%) rotate(-2deg);
+      width: 110px;
+      height: 22px;
+      background: repeating-linear-gradient(
+        45deg,
+        rgba(244, 114, 182, 0.45),
+        rgba(244, 114, 182, 0.45) 8px,
+        rgba(251, 207, 232, 0.75) 8px,
+        rgba(251, 207, 232, 0.75) 16px
+      );
+      border-left: 2px dotted rgba(255, 255, 255, 0.8);
+      border-right: 2px dotted rgba(255, 255, 255, 0.8);
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+      z-index: 6;
+    }
+
+    .sticker {
+      position: absolute;
+      font-size: 1.75rem;
+      filter: drop-shadow(0 4px 6px rgba(190, 24, 93, 0.22));
+      user-select: none;
+      z-index: 8;
+      animation: stickerBob 3s ease-in-out infinite;
+    }
+
+    @keyframes stickerBob {
+      0%, 100% { transform: translateY(0) rotate(var(--rot, -8deg)); }
+      50% { transform: translateY(-4px) rotate(calc(var(--rot, -8deg) + 6deg)); }
+    }
+
+    .sticker-tl { top: 8px; left: 10px; --rot: -14deg; }
+    .sticker-tr { top: 10px; right: 12px; --rot: 15deg; }
+    .sticker-bl { bottom: 46px; left: 10px; --rot: -10deg; }
+    .sticker-br { bottom: 44px; right: 12px; --rot: 12deg; }
+
+    .scrapbook-photo-frame {
+      background: #ffffff;
+      padding: 10px 10px 14px;
+      border-radius: 14px;
+      box-shadow: 0 10px 24px rgba(157, 23, 77, 0.14);
+      border: 1px solid #fbcfe8;
+      margin: 6px auto 14px;
+      max-width: 310px;
+      transform: rotate(var(--frame-tilt, -1.5deg));
+    }
+
+    .scrapbook-photo-frame img {
+      width: 100%;
+      height: 310px;
+      object-fit: cover;
+      border-radius: 10px;
+      display: block;
+    }
+
+    .scrapbook-note {
+      font-family: 'Alex Brush', cursive;
+      font-size: 1.75rem;
+      color: #be185d;
+      line-height: 1.2;
+      margin-top: 4px;
+    }
+
+    .scrapbook-subnote {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: #8c677c;
+      margin-top: 4px;
+    }
+
+    .letter-paper {
+      background: linear-gradient(180deg, #fffaf4 0%, var(--parchment) 100%);
+      color: var(--ink);
+      border-radius: 16px;
+      padding: 24px 20px;
+      text-align: left;
+      box-shadow: inset 0 0 0 1px rgba(244, 114, 182, 0.28);
+      position: relative;
+    }
+
+    .letter-salutation {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: 1.35rem;
+      font-style: italic;
+      font-weight: 600;
+      color: #9d174d;
+      margin-bottom: 10px;
+    }
+
+    .letter-body {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: 1.18rem;
+      line-height: 1.62;
+      color: #4a2c3d;
+      margin-bottom: 18px;
+    }
+
+    .calligraphy-signoff {
+      font-family: 'Alex Brush', cursive;
+      font-size: clamp(2.1rem, 6vw, 2.75rem);
+      line-height: 1.22;
+      color: #be185d;
+      margin-top: 6px;
+      text-align: right;
+      padding-right: 6px;
+    }
+
+    .book-controls {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      margin-top: 16px;
+      padding-left: 8px;
+    }
+
+    .book-nav-btn {
+      flex: 1;
+      padding: 12px 14px;
+      border-radius: 14px;
+      border: 1.5px solid #f472b6;
+      background: #ffffff;
+      color: #be185d;
+      font-family: inherit;
+      font-size: 0.88rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: transform 0.2s var(--ease-out-expo), background 0.2s, opacity 0.2s;
+    }
+
+    .book-nav-btn.primary-flip {
+      background: linear-gradient(135deg, #ec4899 0%, #db2777 100%);
+      color: #ffffff;
+      border: none;
+      box-shadow: 0 6px 16px rgba(236, 72, 153, 0.35);
+    }
+
+    .book-nav-btn:disabled {
+      opacity: 0.38;
+      cursor: not-allowed;
+      transform: none;
+    }
+
+    .book-nav-btn:not(:disabled):active {
+      transform: scale(0.97);
+    }
+
+    .page-dots {
+      display: flex;
+      gap: 6px;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .page-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+      background: #f9a8d4;
+      border: none;
+      cursor: pointer;
+      transition: width 0.25s, background 0.25s;
+    }
+
+    .page-dot.active {
+      width: 20px;
+      background: #db2777;
+    }
+
+    .heart-particle {
+      position: fixed;
+      bottom: -30px;
+      font-size: 1.5rem;
+      pointer-events: none;
+      z-index: 40;
+      animation: floatUp 4s ease-in forwards;
+    }
+
+    @keyframes floatUp {
+      0% {
+        transform: translateY(0) scale(0.8) rotate(0deg);
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(-105vh) scale(1.3) rotate(25deg);
+        opacity: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <section class="stage active" id="stage-1">
+    <div class="card">
+      <div class="fridge-scene">
+        <div class="polaroid-note">
+          <img src="1000324926.jpg" alt="Favour vibe 1" />
+          <div class="polaroid-caption">hehe ~</div>
+        </div>
+        <div class="polaroid-note">
+          <img src="1000324925.jpg" alt="Favour vibe 2" />
+          <div class="polaroid-caption">mood! 💖</div>
+        </div>
+      </div>
+
+      <span class="badge">For Princess Favour 👑💕</span>
+      <h1 class="playful-title">heyyyyyyyyyy</h1>
+      <p class="playful-sub">How you doooiing???</p>
+      <button class="btn btn-primary" type="button" onclick="goToStage(2)">
+        Tap to continue ✨ →
+      </button>
+    </div>
+  </section>
+
+  <section class="stage" id="stage-2">
+    <div class="card">
+      <span class="badge serious-badge">OFFICIAL PRINCESS INQUIRY // PRIORITY: HIGH</span>
+      <h2 class="serious-title">Answer these questions for me.</h2>
+      <p class="serious-sub">
+        Please remain calm and answer truthfully. Your royal response is strictly required before proceeding further.
+      </p>
+      <button class="btn btn-serious" type="button" onclick="goToStage(3)">
+        Proceed to Question 1 →
+      </button>
+    </div>
+  </section>
+
+  <section class="stage" id="stage-3">
+    <div class="card">
+      <span class="badge serious-badge">QUESTION 01 OF 01</span>
+      <h2 class="serious-title" style="margin-bottom: 20px;">Indomie or spaghetti?</h2>
+      <div class="choice-grid">
+        <button class="choice-card" type="button" onclick="selectDish('indomie')">
+          <span class="choice-emoji">🍜</span>
+          <span class="choice-label">Indomie</span>
+        </button>
+        <button class="choice-card" type="button" onclick="selectDish('spaghetti')">
+          <span class="choice-emoji">🍝</span>
+          <span class="choice-label">Spaghetti</span>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <section class="stage" id="stage-4">
+    <div class="card">
+      <div class="stage-photo-wrap" id="chef-visual-container"></div>
+
+      <div class="comfort-pill">🧸 Safe, warm & taken care of always</div>
+      <div class="random-case-banner" id="random-case-text">i GaT yOu!</div>
+
+      <div class="comfort-box">
+        <p class="chef-caption" id="chef-caption-text">
+          Sit back, relax, and let me take care of everything for you.
+        </p>
+        <p class="comfort-subtext" id="comfort-reassurance">
+          No stress, no worries—whenever you’re hungry, tired, or just need someone in your corner, you never have to lift a finger.
+        </p>
+      </div>
+
+      <div class="timer-pill" id="countdown-pill">
+        <span>✨</span>
+        <span id="countdown-label">Something sweet is opening in 5s...</span>
+      </div>
+
+      <div class="birthday-reveal" id="birthday-reveal">
+        <h2 class="birthday-headline">Happy birthday loveeeeeee❤️❤️</h2>
+
+        <div class="storybook-wrapper">
+          <div class="book-page-header">
+            <span>📖 Princess Favour's Book</span>
+            <span id="book-page-indicator">Page 1 of 5</span>
+          </div>
+
+          <div class="book-page active-page" data-book-page="1">
+            <div class="washi-tape"></div>
+            <span class="sticker sticker-tl">👑</span>
+            <span class="sticker sticker-tr">✨</span>
+            <span class="sticker sticker-bl">🎀</span>
+            <span class="sticker sticker-br">💖</span>
+
+            <div class="scrapbook-photo-frame" style="--frame-tilt: -1.5deg;">
+              <img src="1000126596.jpg" alt="Favour memory 1" />
+            </div>
+            <div class="scrapbook-note">Pretty in glasses & pure magic ✨</div>
+            <div class="scrapbook-subnote">Tap next page to flip through your birthday book →</div>
+          </div>
+
+          <div class="book-page" data-book-page="2">
+            <div class="washi-tape" style="transform: translateX(-50%) rotate(2deg);"></div>
+            <span class="sticker sticker-tl">🦋</span>
+            <span class="sticker sticker-tr">🌸</span>
+            <span class="sticker sticker-bl">💕</span>
+            <span class="sticker sticker-br">👸🏾</span>
+
+            <div class="scrapbook-photo-frame" style="--frame-tilt: 1.5deg;">
+              <img src="1000126583.jpg" alt="Favour memory 2" />
+            </div>
+            <div class="scrapbook-note">Effortlessly gorgeous every single day 🌸</div>
+            <div class="scrapbook-subnote">My favorite smile in the whole world</div>
+          </div>
+
+          <div class="book-page" data-book-page="3">
+            <div class="washi-tape" style="transform: translateX(-50%) rotate(-1.5deg);"></div>
+            <span class="sticker sticker-tl">🌷</span>
+            <span class="sticker sticker-tr">💫</span>
+            <span class="sticker sticker-bl">🧸</span>
+            <span class="sticker sticker-br">❤️</span>
+
+            <div class="scrapbook-photo-frame" style="--frame-tilt: -1.2deg;">
+              <img src="1000126586.jpg" alt="Favour memory 3" />
+            </div>
+            <div class="scrapbook-note">Shining brighter than ever 🌟</div>
+            <div class="scrapbook-subnote">Always stunning, always iconic</div>
+          </div>
+
+          <div class="book-page" data-book-page="4">
+            <div class="washi-tape" style="transform: translateX(-50%) rotate(1.8deg);"></div>
+            <span class="sticker sticker-tl">🍓</span>
+            <span class="sticker sticker-tr">👑</span>
+            <span class="sticker sticker-bl">✨</span>
+            <span class="sticker sticker-br">💗</span>
+
+            <div class="scrapbook-photo-frame" style="--frame-tilt: 1.4deg;">
+              <img src="1000126598.jpg" alt="Favour memory 4" />
+            </div>
+            <div class="scrapbook-note">Main character energy 24/7 👑</div>
+            <div class="scrapbook-subnote">One more page left for your birthday letter...</div>
+          </div>
+
+          <div class="book-page" data-book-page="5">
+            <div class="washi-tape"></div>
+            <span class="sticker sticker-tr" style="top: 6px; right: 10px;">💌</span>
+            <span class="sticker sticker-bl" style="bottom: 12px; left: 12px;">🌹</span>
+
+            <div class="letter-paper">
+              <div class="letter-salutation">Dearest Favour,</div>
+              <p class="letter-body">
+                Whether it’s Indomie, spaghetti, or anything else your royal heart craves, I’ve always got you. Wishing you the happiest, sweetest birthday filled with endless laughter, magic, and love.
+              </p>
+              <div class="calligraphy-signoff">
+                Love,<br />
+                Your first patient ❤️
+              </div>
+            </div>
+          </div>
+
+          <div class="book-controls">
+            <button class="book-nav-btn" id="prevBookPage" type="button" onclick="changeBookPage(-1)" disabled>
+              ← Prev
+            </button>
+            <div class="page-dots" id="book-dots">
+              <button class="page-dot active" type="button" onclick="goToBookPage(1)" aria-label="Page 1"></button>
+              <button class="page-dot" type="button" onclick="goToBookPage(2)" aria-label="Page 2"></button>
+              <button class="page-dot" type="button" onclick="goToBookPage(3)" aria-label="Page 3"></button>
+              <button class="page-dot" type="button" onclick="goToBookPage(4)" aria-label="Page 4"></button>
+              <button class="page-dot" type="button" onclick="goToBookPage(5)" aria-label="Page 5"></button>
+            </div>
+            <button class="book-nav-btn primary-flip" id="nextBookPage" type="button" onclick="changeBookPage(1)">
+              Next Page →
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    let currentBookPage = 1;
+    const totalBookPages = 5;
+    let revealTimer = null;
+    let countdownInterval = null;
+
+    function randomizeCase(str) {
+      return str
+        .split("")
+        .map((ch) => (Math.random() > 0.5 ? ch.toUpperCase() : ch.toLowerCase()))
+        .join("");
+    }
+
+    function goToStage(stageNumber) {
+      document.querySelectorAll(".stage").forEach((el) => el.classList.remove("active"));
+      const target = document.getElementById(`stage-${stageNumber}`);
+      if (target) target.classList.add("active");
+
+      document.body.classList.remove("serious-mode", "comfort-mode");
+
+      if (stageNumber === 2 || stageNumber === 3) {
+        document.body.classList.add("serious-mode");
+      } else if (stageNumber === 4) {
+        document.body.classList.add("comfort-mode");
+      }
+    }
+
+    function goToBookPage(pageNumber) {
+      if (pageNumber < 1 || pageNumber > totalBookPages) return;
+      currentBookPage = pageNumber;
+
+      document.querySelectorAll(".book-page").forEach((page) => {
+        page.classList.toggle("active-page", Number(page.dataset.bookPage) === currentBookPage);
+      });
+
+      document.querySelectorAll(".page-dot").forEach((dot, idx) => {
+        dot.classList.toggle("active", idx + 1 === currentBookPage);
+      });
+
+      document.getElementById("book-page-indicator").textContent = `Page ${currentBookPage} of ${totalBookPages}`;
+      document.getElementById("prevBookPage").disabled = currentBookPage === 1;
+
+      const nextBtn = document.getElementById("nextBookPage");
+      if (currentBookPage === totalBookPages) {
+        nextBtn.disabled = true;
+        nextBtn.textContent = "The End ❤️";
+      } else {
+        nextBtn.disabled = false;
+        nextBtn.textContent = currentBookPage === 4 ? "Read Letter 💌 →" : "Next Page →";
+      }
+    }
+
+    function changeBookPage(delta) {
+      goToBookPage(currentBookPage + delta);
+    }
+
+    function buildStreetChefSVG(dish) {
+      const isIndomie = dish === "indomie";
+      const noodleColor = isIndomie ? "#facc15" : "#fb923c";
+      const garnishColor = isIndomie ? "#4ade80" : "#ef4444";
+      const signText = isIndomie ? "MASTER INDOMIE WOK" : "MASTER SPAGHETTI WOK";
+
+      return `
+        <svg viewBox="0 0 520 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Master street-side Black Chinese wok chef cooking ${dish}">
+          <defs>
+            <linearGradient id="warmEvening" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#2a1626"/>
+              <stop offset="100%" stop-color="#4a1d36"/>
+            </linearGradient>
+            <radialGradient id="wokFlame" cx="50%" cy="50%" r="50%">
+              <stop offset="0%" stop-color="#fef08a"/>
+              <stop offset="55%" stop-color="#fb923c"/>
+              <stop offset="100%" stop-color="#f43f5e" stop-opacity="0"/>
+            </radialGradient>
+          </defs>
+
+          <rect width="520" height="300" fill="url(#warmEvening)"/>
+          <rect x="24" y="18" width="472" height="36" rx="8" fill="#db2777"/>
+          <text x="260" y="41" text-anchor="middle" fill="#fef08a" font-family="monospace" font-weight="bold" font-size="14" letter-spacing="2">${signText}</text>
+
+          <circle cx="65" cy="76" r="16" fill="#fb7185"/>
+          <rect x="57" y="57" width="16" height="5" fill="#fde047"/>
+          <circle cx="455" cy="76" r="16" fill="#fb7185"/>
+          <rect x="447" y="57" width="16" height="5" fill="#fde047"/>
+
+          <path d="M185 235 C185 170, 335 170, 335 235 Z" fill="#334155"/>
+          <line x1="260" y1="176" x2="260" y2="235" stroke="#f9a8d4" stroke-width="3"/>
+          <line x1="248" y1="192" x2="272" y2="192" stroke="#f9a8d4" stroke-width="3"/>
+          <line x1="248" y1="208" x2="272" y2="208" stroke="#f9a8d4" stroke-width="3"/>
+
+          <circle cx="260" cy="132" r="34" fill="#5c3824"/>
+          <rect x="232" y="88" width="56" height="22" rx="4" fill="#fffaf0"/>
+          <circle cx="242" cy="84" r="14" fill="#fffaf0"/>
+          <circle cx="260" cy="80" r="16" fill="#fffaf0"/>
+          <circle cx="278" cy="84" r="14" fill="#fffaf0"/>
+
+          <circle cx="248" cy="128" r="3.5" fill="#111"/>
+          <circle cx="272" cy="128" r="3.5" fill="#111"/>
+          <path d="M247 143 Q260 155 273 143" stroke="#fff" stroke-width="3" fill="none" stroke-linecap="round"/>
+
+          <ellipse cx="260" cy="232" rx="85" ry="26" fill="url(#wokFlame)"/>
+
+          <rect x="40" y="236" width="440" height="64" rx="8" fill="#1e293b"/>
+          <rect x="40" y="236" width="440" height="10" fill="#64748b"/>
+
+          <path d="M190 212 Q260 258 330 212 Z" fill="#0f172a" stroke="#64748b" stroke-width="3"/>
+          <line x1="330" y1="212" x2="388" y2="194" stroke="#92400e" stroke-width="7" stroke-linecap="round"/>
+
+          <path d="M215 198 Q235 162 255 195 T295 192" stroke="${noodleColor}" stroke-width="5" fill="none" stroke-linecap="round"/>
+          <path d="M225 186 Q250 150 275 184 T305 182" stroke="${noodleColor}" stroke-width="4.5" fill="none" stroke-linecap="round"/>
+          <path d="M235 204 Q260 172 285 202" stroke="${noodleColor}" stroke-width="5" fill="none" stroke-linecap="round"/>
+
+          <circle cx="245" cy="176" r="5" fill="${garnishColor}"/>
+          <circle cx="278" cy="172" r="5" fill="${garnishColor}"/>
+          <circle cx="262" cy="184" r="6" fill="#fef08a"/>
+
+          <path d="M220 152 Q212 136 222 122" stroke="rgba(255,255,255,0.55)" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+          <path d="M298 150 Q308 134 298 120" stroke="rgba(255,255,255,0.55)" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+        </svg>
+      `;
+    }
+
+    function launchHearts() {
+      const symbols = ["❤️", "💖", "💕", "✨", "👑", "🌸", "🦋"];
+      for (let i = 0; i < 26; i++) {
+        setTimeout(() => {
+          const heart = document.createElement("div");
+          heart.className = "heart-particle";
+          heart.textContent = symbols[Math.floor(Math.random() * symbols.length)];
+          heart.style.left = Math.random() * 94 + "vw";
+          heart.style.animationDuration = 3 + Math.random() * 2 + "s";
+          document.body.appendChild(heart);
+          setTimeout(() => heart.remove(), 5000);
+        }, i * 125);
+      }
+    }
+
+    function selectDish(dish) {
+      goToStage(4);
+      goToBookPage(1);
+
+      const container = document.getElementById("chef-visual-container");
+      container.innerHTML = buildStreetChefSVG(dish);
+
+      document.getElementById("random-case-text").textContent = randomizeCase("I gat you!");
+
+      if (dish === "indomie") {
+        document.getElementById("chef-caption-text").textContent =
+          "A warm, steaming bowl of Indomie made with extra love, just the way you like it.";
+        document.getElementById("comfort-reassurance").textContent =
+          "Kick off your shoes, get cozy, and let me pamper you. Whatever you crave, whenever you need comfort, I’m always right here for you.";
+      } else {
+        document.getElementById("chef-caption-text").textContent =
+          "Rich, saucy, comforting spaghetti cooked to perfection just for my princess.";
+        document.getElementById("comfort-reassurance").textContent =
+          "Take a deep breath and relax—you never have to worry about a thing. I’ve got your cravings, your peace, and your heart covered always.";
+      }
+
+      const revealBox = document.getElementById("birthday-reveal");
+      const pill = document.getElementById("countdown-pill");
+      const label = document.getElementById("countdown-label");
+
+      revealBox.classList.remove("visible");
+      pill.style.display = "inline-flex";
+
+      clearTimeout(revealTimer);
+      clearInterval(countdownInterval);
+
+      let secondsLeft = 5;
+      label.textContent = `Something sweet is opening in ${secondsLeft}s...`;
+
+      countdownInterval = setInterval(() => {
+        secondsLeft -= 1;
+        if (secondsLeft > 0) {
+          label.textContent = `Something sweet is opening in ${secondsLeft}s...`;
+        } else {
+          clearInterval(countdownInterval);
+        }
+      }, 1000);
+
+      revealTimer = setTimeout(() => {
+        pill.style.display = "none";
+        revealBox.classList.add("visible");
+        launchHearts();
+      }, 5000);
+    }
+  </script>
+</body>
+</html>
