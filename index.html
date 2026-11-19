@@ -743,6 +743,35 @@ img {
   background: linear-gradient(135deg, #ec4899 0%, #db2777 100%) !important;
   box-shadow: 0 4px 12px rgba(236, 72, 153, 0.25) !important;
 }
+    /* === TRIM OUTER PAGE EDGES & MELT EVERYTHING SMOOTHLY === */
+
+/* 1. Trim the outer screen frame, margins, and borders so the pink background touches every edge */
+html, body, main, section, .container, .wrapper, [class*="wrap"], [class*="shell"], [class*="screen"] {
+  margin: 0 !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+  max-width: 100% !important;
+  width: 100% !important;
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+  border-radius: 0 !important;
+  background-color: #ffe4ee !important; /* Matches the soft pink page color edge-to-edge */
+}
+
+/* 2. Remove every remaining border, line, divider, and tape strip */
+*, *::before, *::after {
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+/* 3. Feather/fade the edges of every picture so they melt directly into the pink page */
+img {
+  border-radius: 28px !important;
+  -webkit-mask-image: radial-gradient(ellipse 92% 92% at 50% 50%, #000 78%, transparent 100%) !important;
+  mask-image: radial-gradient(ellipse 92% 92% at 50% 50%, #000 78%, transparent 100%) !important;
+  }
     
   </style>
 </head>
