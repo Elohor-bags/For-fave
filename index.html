@@ -722,6 +722,83 @@ img {
   -webkit-mask-image: radial-gradient(ellipse 92% 92% at 50% 50%, #000 78%, transparent 100%) !important;
   mask-image: radial-gradient(ellipse 92% 92% at 50% 50%, #000 78%, transparent 100%) !important;
   }
+    /* === POLISHED, SEAMLESS STORYBOOK THEME === */
+
+/* 1. Full-bleed silky pink page background with clean breathing room */
+html, body {
+  margin: 0 !important;
+  padding: 0 !important;
+  width: 100% !important;
+  min-height: 100vh !important;
+  background: linear-gradient(180deg, #fff0f6 0%, #ffe4ef 50%, #ffd6e7 100%) !important;
+  border: none !important;
+  overflow-x: hidden !important;
+}
+
+/* 2. Remove harsh boxes, dashed lines, tape strips, and sharp borders while keeping neat page padding */
+[class*="card"], [class*="page"], [class*="book"], [class*="shell"], [class*="wrap"], main, section {
+  background: transparent !important;
+  background-image: none !important;
+  border: none !important;
+  box-shadow: none !important;
+  outline: none !important;
+  padding-left: 18px !important;
+  padding-right: 18px !important;
+}
+
+/* Hide the vertical pink notebook dots and tape strips */
+[class*="book"]::before, [class*="book"]::after,
+[class*="page"]::before, [class*="page"]::after,
+[class*="card"]::before, [class*="card"]::after {
+  display: none !important;
+  content: none !important;
+}
+
+/* 3. Clean up photo containers and give her pictures smooth, rounded editorial edges */
+[class*="photo"], [class*="frame"], [class*="memory"], [class*="vibe"] {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+}
+
+img {
+  border: none !important;
+  outline: none !important;
+  border-radius: 26px !important;
+  box-shadow: 0 12px 28px rgba(219, 39, 119, 0.14) !important;
+  display: block !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+/* 4. Restore polished, smooth pill buttons (so Indomie/Spaghetti & Next/Prev look finished) */
+button, .book-nav-btn, [class*="btn"] {
+  border: none !important;
+  border-radius: 999px !important;
+  background: rgba(255, 255, 255, 0.85) !important;
+  color: #be185d !important;
+  box-shadow: 0 6px 18px rgba(219, 39, 119, 0.12) !important;
+  padding: 13px 22px !important;
+}
+
+button.primary-flip, .book-nav-btn.primary-flip, [class*="primary"] {
+  background: linear-gradient(135deg, #f43f5e 0%, #db2777 100%) !important;
+  color: #ffffff !important;
+  box-shadow: 0 8px 20px rgba(219, 39, 119, 0.28) !important;
+}
+
+/* 5. Keep the page dots clean and small (don't let button padding stretch them) */
+.page-dot {
+  padding: 0 !important;
+  border-radius: 999px !important;
+  background: #f9a8d4 !important;
+  box-shadow: none !important;
+}
+
+.page-dot.active {
+  background: #db2777 !important;
+}
     
   </style>
 </head>
